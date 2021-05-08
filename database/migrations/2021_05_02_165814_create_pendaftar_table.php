@@ -16,8 +16,8 @@ class CreatePendaftarTable extends Migration
         Schema::create('pendaftar', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_penawaran_sertifikasi')->constrained('penawaran_sertifikasi');
-            $table->foreignId('id_asesi')->constrained('asesi');
+            $table->foreignId('id_penawaran_sertifikasi')->constrained('penawaran_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_asesi')->constrained('asesi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('status_akhir_sertifikasi');
             $table->date('tanggal_status_akhir');
             $table->string('created_by');

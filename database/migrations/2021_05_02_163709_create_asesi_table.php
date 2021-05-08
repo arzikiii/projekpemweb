@@ -32,7 +32,7 @@ class CreateAsesiTable extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('edited_by');
             $table->timestamp('edited_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
-            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('id_user')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -16,7 +16,7 @@ class CreatePenawaranSertifikasiTable extends Migration
         Schema::create('penawaran_sertifikasi', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_ref_jenis_sertifikasi')->constrained('ref_jenis_sertifikasi');
+            $table->foreignId('id_ref_jenis_sertifikasi')->constrained('ref_jenis_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
             $table->text('deskripsi_penawaran');
             $table->year('periode');
             $table->string('created_by');

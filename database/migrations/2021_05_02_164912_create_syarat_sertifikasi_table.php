@@ -16,7 +16,7 @@ class CreateSyaratSertifikasiTable extends Migration
         Schema::create('syarat_sertifikasi', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_ref_jenis_sertifikasi')->constrained('ref_jenis_sertifikasi');
+            $table->foreignId('id_ref_jenis_sertifikasi')->constrained('ref_jenis_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
             $table->text('syarat');
             $table->boolean('is_aktif');
         });
