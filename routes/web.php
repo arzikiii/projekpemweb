@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 //      return view('index');
 // });
 
-//Route::get('/', [pagecontroller::class, 'home']);
+Route::get('/', [pagecontroller::class, 'home']);
