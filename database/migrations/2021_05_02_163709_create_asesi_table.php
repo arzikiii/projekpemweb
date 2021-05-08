@@ -17,6 +17,7 @@ class CreateAsesiTable extends Migration
         Schema::create('asesi', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->string('nama');
             $table->char('nim',8);
             $table->char('nik', 20);
             $table->string('tempat_lahir');
